@@ -34,5 +34,6 @@ install(TARGETS ${PROJECT_NAME}
 add_custom_target(plugin-install
         DEPENDS ${PROJECT_NAME}
         COMMAND
-            "${CMAKE_COMMAND}" --install "${CMAKE_BINARY_DIR}" --component plugin
+            "${CMAKE_COMMAND}" -DCMAKE_INSTALL_COMPONENT=plugin
+            -P "${CMAKE_BINARY_DIR}/cmake_install.cmake"
         )
