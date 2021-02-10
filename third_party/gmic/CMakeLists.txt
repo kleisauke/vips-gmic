@@ -32,3 +32,8 @@ set(CUSTOM_CFLAGS ON CACHE BOOL "Disable -Ofast" FORCE)
 
 # CMake target: libgmic or libgmicstatic
 FetchContent_MakeAvailable(gmic)
+
+# Disable VT100 color capabilities, we don't use the terminal
+# Disable threading support, we rely on libvips' thread pool
+# Disable abort support, libvips handles interrupts
+target_compile_options(libgmicstatic PUBLIC -Ucimg_use_vt100 -Ugmic_is_parallel -Ucimg_use_abort)
