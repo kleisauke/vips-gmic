@@ -6,12 +6,12 @@ add_library(${PROJECT_NAME} SHARED ${SOURCES})
 
 target_include_directories(${PROJECT_NAME}
         PRIVATE
-            ${VIPS_CPP_INCLUDE_DIRS}
+            ${VIPS_INCLUDE_DIRS}
         )
 
 target_link_libraries(${PROJECT_NAME}
         PRIVATE
-            ${VIPS_CPP_LDFLAGS}
+            ${VIPS_LDFLAGS}
             #libgmic
             libgmicstatic
         )
@@ -22,16 +22,16 @@ set_target_properties(${PROJECT_NAME}
             SUFFIX ".plg" # libvips plugins needs .plg as suffix
         )
 
-string(REPLACE "." ";" VERSION_LIST ${VIPS_CPP_VERSION})
-list(GET VERSION_LIST 0 VIPS_CPP_MAJOR)
-list(GET VERSION_LIST 1 VIPS_CPP_MINOR)
+string(REPLACE "." ";" VERSION_LIST ${VIPS_VERSION})
+list(GET VERSION_LIST 0 VIPS_MAJOR)
+list(GET VERSION_LIST 1 VIPS_MINOR)
 
 install(TARGETS ${PROJECT_NAME}
         RUNTIME
-		    DESTINATION ${CMAKE_INSTALL_LIBDIR}/vips-plugins-${VIPS_CPP_MAJOR}.${VIPS_CPP_MINOR}
+		    DESTINATION ${CMAKE_INSTALL_LIBDIR}/vips-plugins-${VIPS_MAJOR}.${VIPS_MINOR}
 		    COMPONENT plugin
         LIBRARY
-		    DESTINATION ${CMAKE_INSTALL_LIBDIR}/vips-plugins-${VIPS_CPP_MAJOR}.${VIPS_CPP_MINOR}
+		    DESTINATION ${CMAKE_INSTALL_LIBDIR}/vips-plugins-${VIPS_MAJOR}.${VIPS_MINOR}
 		    COMPONENT plugin
         )
 

@@ -21,9 +21,9 @@ include(FetchContent)
 # Use GNUInstallDirs to install libraries into correct locations on all platforms
 include(GNUInstallDirs)
 
-# Find vips-cpp (required)
+# Find vips (required)
 find_package(PkgConfig)
-pkg_check_modules(VIPS_CPP vips-cpp>=8.8 REQUIRED)
+pkg_check_modules(VIPS vips>=8.8 REQUIRED)
 
 # Add gmic dependency
 add_subdirectory(third_party/gmic)
