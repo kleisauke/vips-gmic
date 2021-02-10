@@ -1,5 +1,5 @@
-# Note: gmic requires CMake 3.14
-cmake_minimum_required(VERSION 3.14 FATAL_ERROR)
+# Note: `cmake --install` requires CMake 3.15
+cmake_minimum_required(VERSION 3.15 FATAL_ERROR)
 project(vips-gmic
         VERSION 0.0.1
         DESCRIPTION "libvips plugin for running gmic commands"
