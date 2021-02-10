@@ -188,7 +188,9 @@ vips_gmic_start( VipsImage *out, void *a, void *b )
 
 	/* Make a gmic for this thread.
 	 */
-	seq->gmic_instance = new gmic; 
+	CImgList<gmic_pixel_type> images;
+	CImgList<char> images_names;
+	seq->gmic_instance = new gmic( 0, images, images_names, 0, /*include_stdlib*/false, 0, 0 );
 
 	return( (void *) seq );
 }

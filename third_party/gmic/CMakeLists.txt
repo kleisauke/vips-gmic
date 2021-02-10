@@ -24,8 +24,8 @@ set(ENABLE_OPENMP OFF CACHE BOOL "Disable OpenMP" FORCE)
 set(ENABLE_PNG OFF CACHE BOOL "Disable libpng" FORCE)
 set(ENABLE_TIFF OFF CACHE BOOL "Disable libtiff" FORCE)
 
-# The standard library of gmic needs zlib
-#set(ENABLE_ZLIB OFF CACHE BOOL "Disable zlib" FORCE)
+# Note: the standard library of gmic needs zlib
+set(ENABLE_ZLIB OFF CACHE BOOL "Disable zlib" FORCE)
 
 # -Ofast may cause unexpected results and non-IEEE compliant code
 set(CUSTOM_CFLAGS ON CACHE BOOL "Disable -Ofast" FORCE)
