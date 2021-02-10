@@ -1,7 +1,7 @@
 FetchContent_Declare(gmic
-        GIT_REPOSITORY https://github.com/kleisauke/gmic.git
+        GIT_REPOSITORY https://github.com/dtschump/gmic.git
         GIT_SHALLOW TRUE
-        GIT_TAG 2461be2d9582e8b83ac91989ef7c56e502f4b237
+        GIT_TAG 07d7ff0a3d6f718fe284eee575dfed4f80d66eca
         )
 
 set(BUILD_LIB OFF CACHE BOOL "Disable shared libraries" FORCE)
