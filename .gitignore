@@ -1,3 +1,7 @@
 *.swp
 *.plg
 *.o
+
+build/
+src/CImg.h
+src/gmic_stdlib.h
