@@ -27,5 +27,8 @@ set(ENABLE_TIFF OFF CACHE BOOL "Disable libtiff" FORCE)
 # The standard library of gmic needs zlib
 #set(ENABLE_ZLIB OFF CACHE BOOL "Disable zlib" FORCE)
 
+# -Ofast may cause unexpected results and non-IEEE compliant code
+set(CUSTOM_CFLAGS ON CACHE BOOL "Disable -Ofast" FORCE)
+
 # CMake target: libgmic or libgmicstatic
 FetchContent_MakeAvailable(gmic)
