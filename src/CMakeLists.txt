@@ -12,6 +12,7 @@ target_include_directories(${PROJECT_NAME}
 target_link_libraries(${PROJECT_NAME}
         PRIVATE
             ${VIPS_LDFLAGS}
+            ${GMODULE_LDFLAGS}
             #libgmic
             libgmicstatic
         )
