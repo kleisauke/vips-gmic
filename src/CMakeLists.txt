@@ -27,6 +27,7 @@ list(GET VERSION_LIST 0 VIPS_CPP_MAJOR)
 list(GET VERSION_LIST 1 VIPS_CPP_MINOR)
 
 install(TARGETS ${PROJECT_NAME}
+        RUNTIME DESTINATION ${CMAKE_INSTALL_LIBDIR}/vips-plugins-${VIPS_CPP_MAJOR}.${VIPS_CPP_MINOR}
         LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}/vips-plugins-${VIPS_CPP_MAJOR}.${VIPS_CPP_MINOR}
         COMPONENT plugin
         )
@@ -34,6 +35,7 @@ install(TARGETS ${PROJECT_NAME}
 add_custom_target(plugin-install
         DEPENDS ${PROJECT_NAME}
         COMMAND
-            "${CMAKE_COMMAND}" -DCMAKE_INSTALL_COMPONENT=plugin
-            -P "${CMAKE_BINARY_DIR}/cmake_install.cmake"
+            "${CMAKE_COMMAND}" -DCMAKE_INSTALL_COMPONENT=plugin -P ./cmake_install.cmake
+        WORKING_DIRECTORY
+            "${CMAKE_BINARY_DIR}"
         )
