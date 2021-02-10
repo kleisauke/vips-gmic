@@ -3,8 +3,10 @@
  * AF, 6/10/14
  * 23/8/19
  *      - revise for vips8.8
- * 9/2/21 kleisauke
- *      - revise for CMake
+ * 10/2/21 kleisauke
+ *      - revise for gmic 2.9.6
+ *      - avoid decompressing the stdlib for each thread
+ *      - always export g_module_check_init
  */
 
 /*
@@ -385,11 +387,9 @@ vips_gmic( VipsImage **in, VipsImage **out, int n,
 	return( result );
 }
 
-G_END_DECLS
-
 /* This is called on module load.
  */
-extern "C" const gchar *
+G_MODULE_EXPORT const gchar *
 g_module_check_init( GModule *module )
 {
 #ifdef DEBUG
@@ -404,3 +404,5 @@ g_module_check_init( GModule *module )
 
 	return( NULL ); 
 }
+
+G_END_DECLS
