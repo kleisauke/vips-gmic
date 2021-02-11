@@ -33,6 +33,11 @@ set(CUSTOM_CFLAGS ON CACHE BOOL "Disable -Ofast" FORCE)
 # CMake target: libgmic or libgmicstatic
 FetchContent_MakeAvailable(gmic)
 
+# Swap the removed -Ofast with -O3
+if (CMAKE_COMPILER_IS_GNUCXX)
+    target_compile_options(libgmicstatic PUBLIC "$<$<CONFIG:RELEASE>:-O3>")
+endif()
+
 # Disable VT100 color capabilities, we don't use the terminal
 # Disable threading support, we rely on libvips' thread pool
 # Disable abort support, libvips handles interrupts
