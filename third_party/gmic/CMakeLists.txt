@@ -45,3 +45,6 @@ target_compile_options(libgmicstatic PUBLIC -Dcimg_display=0 -Ucimg_use_vt100 -U
 
 # Ensure mutexes are still functional (Unix only)
 target_compile_options(libgmicstatic PUBLIC -Dcimg_use_pthread)
+
+# Security hardening features
+target_compile_options(libgmicstatic PUBLIC -Dgmic_noexec -Dcimg_no_system_calls)
