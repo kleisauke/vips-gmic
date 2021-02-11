@@ -42,3 +42,6 @@ endif()
 # Disable threading support, we rely on libvips' thread pool
 # Disable abort support, libvips handles interrupts
 target_compile_options(libgmicstatic PUBLIC -Dcimg_display=0 -Ucimg_use_vt100 -Ugmic_is_parallel -Ucimg_use_abort)
+
+# Ensure mutexes are still functional (Unix only)
+target_compile_options(libgmicstatic PUBLIC -Dcimg_use_pthread)
