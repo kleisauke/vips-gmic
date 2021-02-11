@@ -29,11 +29,11 @@ list(GET VERSION_LIST 1 VIPS_MINOR)
 
 install(TARGETS ${PROJECT_NAME}
         RUNTIME
-		    DESTINATION ${CMAKE_INSTALL_LIBDIR}/vips-plugins-${VIPS_MAJOR}.${VIPS_MINOR}
-		    COMPONENT plugin
+            DESTINATION ${CMAKE_INSTALL_LIBDIR}/vips-plugins-${VIPS_MAJOR}.${VIPS_MINOR}
+            COMPONENT plugin
         LIBRARY
-		    DESTINATION ${CMAKE_INSTALL_LIBDIR}/vips-plugins-${VIPS_MAJOR}.${VIPS_MINOR}
-		    COMPONENT plugin
+            DESTINATION ${CMAKE_INSTALL_LIBDIR}/vips-plugins-${VIPS_MAJOR}.${VIPS_MINOR}
+            COMPONENT plugin
         )
 
 add_custom_target(plugin-install
