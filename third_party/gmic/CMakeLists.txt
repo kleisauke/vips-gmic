@@ -1,6 +1,5 @@
 FetchContent_Declare(gmic
         GIT_REPOSITORY https://github.com/dtschump/gmic.git
-        GIT_SHALLOW TRUE
         GIT_TAG 753d75b6bd7cdd94fe028fc7be99e98fd5a8bbad
         )
 
