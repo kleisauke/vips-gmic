@@ -26,7 +26,7 @@ find_package(PkgConfig)
 pkg_check_modules(VIPS vips>=8.8 REQUIRED)
 
 # Find gmodule (required)
-pkg_check_modules(GMODULE gmodule-2.0>=2.15 REQUIRED)
+pkg_check_modules(GMODULE gmodule-no-export-2.0>=2.40 REQUIRED)
 
 # Add gmic dependency
 add_subdirectory(third_party/gmic)
